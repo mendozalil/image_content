@@ -1,4 +1,4 @@
-function encrypt(text) {
+function o_encrypt(text) {
       const encoder = new TextEncoder(); 
       const bytes = encoder.encode(text);
       const encodedBytes = Array.from(bytes, b =>
@@ -10,7 +10,7 @@ function encrypt(text) {
       return encodedBytes.join('o');
     }
 
-    function decrypt(cipher) {
+    function o_decrypt(cipher) {
       if (!cipher) return '';
       // filter chunker
       const parts = cipher.split('o').filter(p => p.length > 0);
