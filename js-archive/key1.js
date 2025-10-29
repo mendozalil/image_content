@@ -1,11 +1,11 @@
 function encrypt(text) {
-      const encoder = new TextEncoder();           // UTF-8 bytes
-      const bytes = encoder.encode(text);         // Uint8Array
+      const encoder = new TextEncoder(); 
+      const bytes = encoder.encode(text);
       const encodedBytes = Array.from(bytes, b =>
-        b.toString(2).padStart(8, '0')            // "01001000"
-          .split('')                              // ['0','1','0',...]
-          .map(bit => bit === '1' ? 'O' : '0')    // ['0','O','0',...]
-          .join('')                               // "0O0O00O0"
+        b.toString(2).padStart(8, '0') 
+          .split('')
+          .map(bit => bit === '1' ? 'O' : '0')
+          .join('')
       );
       return encodedBytes.join('o');
     }
